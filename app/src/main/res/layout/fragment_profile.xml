@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#292C32"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFrag">
+
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/profile"
+        android:layout_marginTop="25dp"
+        android:id="@+id/profileicon"
+        android:layout_marginLeft="32dp"
+
+        />
+    <TextView
+        android:layout_width="105dp"
+        android:layout_height="36dp"
+        android:text="Profile"
+        android:layout_toRightOf="@id/profileicon"
+        android:layout_marginTop="24.5dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#FF8330"
+        android:textSize="30dp"
+        />
+
+    <ImageView
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:background="@drawable/circular"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/profileimage"
+        android:layout_marginTop="220dp">
+
+    </ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="M"
+        android:id="@+id/profileimgname"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="240dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="70dp"
+
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/profilename1"
+       android:layout_below="@id/profileimage"
+        android:layout_marginTop="18dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:fontFamily="SF Pro Display"
+        android:textColor="#FFFFFF"
+        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/profileid"
+        android:layout_below="@id/profilename1"
+        android:textColor="#FFFFFF"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="2018B2A40733P"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LogOut"
+        android:textColor="#FF8330"
+        android:background="@drawable/rectangle"
+        android:id="@+id/logoutbtn"
+        android:layout_below="@id/profileid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+</RelativeLayout>

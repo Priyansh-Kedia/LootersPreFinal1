@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/itemtextcartadmin"
+                android:layout_marginTop="40dp"
+                android:text="HEY"
+                android:textSize="30dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/itempricecartadmin"
+                android:layout_below="@id/itemtextcartadmin"
+                android:text="Price"
+                android:layout_marginTop="2dp"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:textSize="20dp"
+                android:layout_marginLeft="200dp"
+                android:id="@+id/quancartadmin"
+
+                android:layout_toRightOf="@id/itempricecartadmin"
+                android:text="00"/>
+
+
+
+            <!--            <Button-->
+            <!--                android:id="@+id/subB"-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:layout_toRightOf="@id/itemprice"-->
+            <!--                android:layout_marginLeft="130dp"-->
+            <!--                android:layout_marginTop="70dp"-->
+            <!--                android:text="-" />-->
+
+            <!--            <Button-->
+            <!--                android:id="@+id/addB"-->
+            <!--                android:layout_width="40dp"-->
+            <!--                android:layout_height="40dp"-->
+            <!--                android:layout_toRightOf="@id/itemprice"-->
+            <!--                android:layout_marginLeft="190dp"-->
+            <!--                android:layout_marginTop="70dp"-->
+            <!--                android:text="+" />-->
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "484412954734",
+    "firebase_url": "https://lootersdb-d54a4.firebaseio.com",
+    "project_id": "lootersdb-d54a4",
+    "storage_bucket": "lootersdb-d54a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484412954734:android:f0b61218607212242eae7f",
+        "android_client_info": {
+          "package_name": "com.example.looters"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484412954734-9c25edqpn1vopndjvuqq976iup6uis18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.looters",
+            "certificate_hash": "3340b2274f7e47e12e9bc656c7c1cba5733173ec"
+          }
+        },
+        {
+          "client_id": "484412954734-l41ktvp7siqr7c7hulevvhg6u11ofs10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGrYf5E-fOTyRiQ2DdYFUwSx9rHB3sN_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484412954734-l41ktvp7siqr7c7hulevvhg6u11ofs10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

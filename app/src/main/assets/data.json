@@ -1,0 +1,214 @@
+{
+"items":[
+
+{ 
+  "name" : "Aloo tikki burger" ,
+  "price" : 40
+  },
+{ 
+  "name" : "Achari burger" ,
+  "price" : 45 
+  },
+{ 
+  "name" : "Crispy masala burger" ,
+  "price" : 55
+  },
+{ 
+  "name" : "Spicy paneer burger" ,
+  "price" : 70 
+  },
+{ 
+  "name" : "Go green burger",
+  "price" : 50 
+  },
+{ 
+  "name" : "Veggie Kebab burger",
+  "price" : 45 
+  },
+{ 
+  "name" : "Smoky Bean burger" ,
+  "price" : 55
+  },
+{ 
+  "name" : "Chicken burger" ,
+  "price" : 60
+  },  
+ { 
+  "name" : "Juicy Chicken burger" ,
+  "price" : 70
+  }, 
+ { 
+  "name" : "Grilled Chicken burger" ,
+  "price" : 76
+  }, 
+ {
+  "name" : "Veg Loaded pizza",
+  "price" : 109
+  },
+ { 
+  "name" : "Tangy Paneer pizza" ,
+  "price" : 83
+  },
+ { 
+  "name" : "Veg Choice pizza" ,
+  "price" : 72
+  },
+ { 
+  "name" : "Margarita pizza" ,
+  "price" : 65
+  },
+{ 
+  "name" : "Roasted Chicken pizza" ,
+  "price" : 83
+  },
+ { 
+  "name" : "Chicken Farm pizza" ,
+  "price" : 76
+  },
+ { 
+  "name" : "Chicken Corn pizza" ,
+  "price" : 85
+  },
+ {
+  "name" : "Mutton pizza" ,
+  "price" : 106
+  },
+ {
+  "name" : "Paneer wrap" ,
+  "price" : 70
+  },
+ {
+  "name" : "Veggie wrap" ,
+  "price" : 60
+  },
+ {
+  "name" : "Chicken wrap" ,
+  "price" : 70
+  },
+ {
+  "name" : "Paneer Tikka sandwich" ,
+  "price" : 48
+  },
+ {
+  "name" : "Mexican sandwich" ,
+  "price" : 45
+  },
+ {
+  "name" : "Chicken sandwich" ,
+  "price" : 48
+  },
+ {
+  "name" : "Honey chilly potato" ,
+  "price" : 66 
+  },
+ {
+  "name" : "Chilly potato" ,
+  "price" : 56 
+  },
+ {
+  "name" : "Chilly Paneer" ,
+  "price" : 110 
+  },
+ {
+  "name" : "Veg Rice" ,
+  "price" : 42
+  },
+ {
+  "name" : "Schezwan Rice" ,
+  "price" : 48 
+  },
+ {
+  "name" : "Paneer Fried Rice" ,
+  "price" : 55
+  },
+ {
+  "name" : "Veg Noodles" ,
+  "price" : 55
+  },
+ {
+  "name": "Chicken Lollipop" ,
+  "price" : 110
+  },
+ {
+  "name" : "Chicken Wings" ,
+  "price" : 110
+  },
+ {
+  "name" : "Chilly Chicken" ,
+  "price" : 110
+  },
+ {
+  "name" : "Chicken Noodles" ,
+  "price" : 66
+  },
+ {
+  "name" : "Chicken Fried rice" ,
+  "price" : 53
+  },
+ {
+  "name" : "Chicken 65" ,
+  "price" : 110
+  },
+ {
+  "name" : "Virgin mojito",
+  "price" : 32
+  },
+ {
+  "name" : "Cola mojito" ,
+  "price" : 32
+  },
+ {
+  "name" : "masala mojito" ,
+  "price" : 32
+  },
+ {
+  "name" : "Lime Fresh mojito" ,
+  "price" : 32
+  },
+ {
+  "name" : "Green Apple mojito" ,
+  "price" : 32
+  },
+ {
+  "name" : "Cool blue mojito" ,
+  "price" : 32
+  },
+ {
+  "name" : "Choco Frappe" ,
+  "price" : 50
+  },
+ {
+  "name" : "Mango Shake",
+  "price" : 31
+  },
+ {
+  "name" : "Banana Shake",
+  "price" : 31
+  },
+ {
+  "name" : "Chikku Shake",
+  "price" : 31
+  },
+ {
+  "name" : "Oreo Shake",
+  "price" : 31
+  },
+ {
+  "name" : "Cold Coffee Shake",
+  "price" : 31
+  },
+ {
+  "name" : "Hot coffee",
+  "price" : 15
+  },
+ {
+  "name" : "Hot Badam",
+  "price" : 25
+  },
+ {
+  "name" : "Hot Chocolate",
+  "price" : 25
+  }
+]
+  
+ }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#292C32"
+    tools:context=".PayActivity">
+
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Google Pay"
+        android:id="@+id/gpaybtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/rectangle"
+        android:textColor="#FF8330"
+        />
+    <Button
+        android:textColor="#FF8330"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Paytm"
+        android:layout_below="@id/gpaybtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/paytmbtn"
+        android:background="@drawable/rectangle"
+        />
+
+    <Button
+        android:textColor="#FF8330"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Pay Using Card"
+        android:layout_below="@id/paytmbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:id="@+id/cardpay"
+        android:background="@drawable/rectangle"
+        />
+
+
+
+
+
+
+</RelativeLayout>
