@@ -104,21 +104,14 @@ public class MenuFrag extends Fragment {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        if (names.size()!=0) {
-                            for (int i = 0; i < names.size(); i++) {
 
-                                if (names.get(i).equals(snapshot.child("name").getValue().toString())) {
-                                    MyData myData = new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(), snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), quantities.get(i));
-                                    itemdata.add(myData);
-                                    Toast.makeText(getContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
-                                } else {
-                                    itemdata.add(new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(), snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), "0"));
-                                }
-                            }
-                        }
-                        else {
-                            itemdata.add(new MyData(snapshot.child("name").getValue().toString(), "₹ " +snapshot.child("price").getValue().toString(),snapshot.child("enabled").getValue().toString(),snapshot.child("section").getValue().toString(),"0"));
-                        }
+                        MyData myData = new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(), snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), "0");
+                        itemdata.add(myData);
+                        //Toast.makeText(getContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
+
+
+
+
 
                     }
 
