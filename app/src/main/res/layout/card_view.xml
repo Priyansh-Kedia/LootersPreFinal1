@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/parent"
+    android:layout_margin="8dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,20 +11,19 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350sp"
-        android:layout_height="113sp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="5dp"
         app:cardElevation="20dp"
-        android:layout_margin="10dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="113dp"
             android:padding="13dp"
             android:background="@drawable/cardborder"
             >
@@ -49,32 +49,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/itemtext"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="30dp"
                 android:text="Item"
+                android:textColor="#fff"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".05"
+                app:layout_constraintVertical_bias=".3"
                 android:textSize="20dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/itemprice"
-                app:layout_constraintTop_toBottomOf="@id/itemtext"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
+                android:textColor="#FF8330"
                 android:text="Price"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemtext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".05"
                 android:textSize="15dp"/>
             <Button
                 android:id="@+id/subB"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                app:layout_constraintLeft_toRightOf="@id/itemprice"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="190dp"
-                android:layout_marginTop="60dp"
                 android:background="@drawable/minusbtnm"
-                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".99"
+                app:layout_constraintVertical_bias=".95"
                 />
 
             <Button
@@ -82,22 +87,24 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:textSize="10dp"
-                app:layout_constraintLeft_toRightOf="@id/itemprice"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="234dp"
                 android:background="@drawable/plusbtnm"
-                android:layout_marginTop="60dp"
-               />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias=".95"
+                app:layout_constraintRight_toLeftOf="@id/subB"
+                android:layout_marginRight="30dp"
+                />
 
             <TextView
                 android:id="@+id/quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintLeft_toRightOf="@id/itemprice"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginLeft="220dp"
                 android:textColor="#FF8330"
-                android:layout_marginTop="63dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias=".95"
+                app:layout_constraintRight_toLeftOf="@+id/subB"
+                app:layout_constraintLeft_toRightOf="@id/addB"
                 android:text="0" />
 
 

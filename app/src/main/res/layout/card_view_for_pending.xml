@@ -42,7 +42,7 @@
                 android:textSize="15dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="#FF8330"
-               android:id="@+id/pendingq"
+                android:id="@+id/pendingq"
                 android:layout_below="@id/itemtextpend"
                 android:text="135726"/>
 
