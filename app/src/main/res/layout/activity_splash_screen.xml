@@ -6,52 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/splashscreen"
     tools:context=".SplashScreen"
-    android:background="#292C32">
+    android:background="@drawable/splashscreentest">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:alpha="0"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="#292C32"
-        android:id="@+id/cardsplash"
-        app:layout_constraintBottom_toBottomOf="parent">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="LOOTERS"
-            android:alpha="1"
-            android:textSize="50dp"
-            android:id="@+id/textsplash"
-            android:textColor="#FF8330"/>
-        <View
-            android:layout_width="215dp"
-            android:layout_height="1dp"
-            android:layout_centerHorizontal="true"
-            android:background="#fff"
-            android:layout_below="@id/textsplash"
-            android:layout_marginTop="30dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EAT | SLEEP | REPEAT"
-            android:layout_below="@id/textsplash"
-            android:textSize="20dp"
-            android:textColor="#fff"
-            android:layout_marginTop="40dp"
-            android:layout_centerHorizontal="true"
-            />
-
-    </RelativeLayout>
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
