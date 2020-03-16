@@ -3,6 +3,7 @@ package com.example.looters;
 import androidx.annotation.AnimatorRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ActivityOptions;
@@ -28,6 +29,7 @@ import javax.xml.transform.Templates;
 public class SplashScreen extends AppCompatActivity {
     ConstraintLayout constraintLayout;
     TextView textView;
+    CardView cardView;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,10 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         constraintLayout = (ConstraintLayout)findViewById(R.id.splashscreen);
         textView = (TextView)findViewById(R.id.textsplash);
-        textView.animate().alpha(1f).setDuration(3000);
+        cardView = (CardView)findViewById(R.id.cardsplash);
+        constraintLayout = (ConstraintLayout)findViewById(R.id.splashscreen);
+
+        cardView.animate().alpha(1f).setDuration(3000);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
