@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> {
-    DatabaseReference cartref = FirebaseDatabase.getInstance().getReference().child("items");
+
    static GoogleSignInAccount account;
     static Order order;
 
@@ -92,7 +92,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                 int c = account.getEmail().toString().indexOf("@");
                 b = account.getEmail().toString().substring(0,c);
             }
+            DatabaseReference cartref = FirebaseDatabase.getInstance().getReference().child(b);
             DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+//            DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child(b);
             addb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -100,36 +102,39 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                     i++;
                     quantity.setText(Integer.toString(i));
 
-
-                    databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    if (i==1)
+//                    {
+//                        key = cartref.push().getKey();
+//                        order.setAccount(account.getEmail().toString().substring(0,9));
+//                        order.setName(itemname.getText().toString());
+//                        order.setPrice(itemprice.getText().toString().substring(2));
+//                        order.setQ(quantity.getText().toString());
+//                        order.setSection(section.getText().toString());
+//                       // order.setOtp(id);
+//                        cartref.child(key).setValue(order);
+//                    }
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
+                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                            for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                            for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
                             {
-                                if (i==1)
+                                if (dataSnapshot1.child("name").getValue().toString().equals(itemname.getText().toString()))
                                 {
-                                    key = dataSnapshot1.getKey();
+                                    key1 = dataSnapshot1.getKey();
+                                    // cartref.child(key1).removeValue();
+                                    // key = cartref.push().getKey();
                                     order.setAccount(account.getEmail().toString().substring(0,9));
                                     order.setName(itemname.getText().toString());
-                                    order.setPrice(itemprice.getText().toString().substring(2));
+                                    order.setPrice(itemprice.getText().toString());
                                     order.setQ(quantity.getText().toString());
-                                    order.setSection(dataSnapshot1.child("section").getValue().toString());
-                                    // order.setOtp(id);
-                                    cartref.child(key).setValue(order);
+                                  //  order.setSection(section.getText().toString());
+                                    // order.setPending(true);
+                                    Map<String,Object> map = new HashMap<>();
+                                    map.put("q",quantity.getText().toString());
+                                    cartref.child(key1).updateChildren(map);
+
                                 }
-                                key1 = dataSnapshot1.getKey();
-                                // cartref.child(key1).removeValue();
-                                // key = cartref.push().getKey();
-                                order.setAccount(b);
-                                order.setName(itemname.getText().toString());
-                                order.setPrice(itemprice.getText().toString());
-                                order.setQ(quantity.getText().toString());
-                                order.setSection(dataSnapshot1.child("section").getValue().toString());
-                                // order.setPending(true);
-                                Map<String,Object> map = new HashMap<>();
-                                map.put("q",quantity.getText().toString());
-                                cartref.child(b).child(key1).updateChildren(map);
                             }
                         }
 
@@ -153,7 +158,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                     }
                     quantity.setText(Integer.toString(i));
 
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -171,17 +176,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
                                     order.setQ(quantity.getText().toString());
                                     Map<String,Object> map = new HashMap<>();
                                     map.put("q",quantity.getText().toString());
-                                    if (Integer.parseInt(quantity.getText().toString()) != 0) {
-                                        cartref.child(b).child(key).updateChildren(map);
-                                    }
-                                    if (Integer.parseInt(quantity.getText().toString()) == 0)
-                                    {
-                                        cartref.child(b).child(key).removeValue();
-                                        itemdata.remove(getAdapterPosition());
-                                        notifyItemRemoved(getAdapterPosition());
+                                    cartref.child(key).updateChildren(map);
 
-                                        notifyItemRangeChanged(getAdapterPosition(),itemdata.size());
-                                    }
+
                                 }
 //                                else {
 //                                    if (Integer.parseInt(quantity.getText().toString()) == 0)

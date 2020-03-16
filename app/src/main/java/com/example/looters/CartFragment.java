@@ -58,7 +58,7 @@ public class CartFragment extends Fragment  {
         String b = account.getEmail().toString().substring(0,a);
         String otp = getArguments().getString("otp");
         nocartitems = (TextView)view.findViewById(R.id.nocartitems);
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
         custLoad.showloader();
 
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -66,10 +66,12 @@ public class CartFragment extends Fragment  {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data : dataSnapshot.getChildren())
                 {
-                    CartData cartData = new CartData(data.child("name").getValue().toString(), "₹ " + data.child("price").getValue().toString(),data.child("q").getValue().toString());
+                    if (!(data.child("q").getValue().toString().equals("0"))) {
+                    CartData cartData = new CartData(data.child("name").getValue().toString(), "₹ " + data.child("price").getValue().toString(), data.child("q").getValue().toString());
                     itemdata.add(cartData);
-                    total = total + Integer.parseInt(data.child("price").getValue().toString())*Integer.parseInt(data.child("q").getValue().toString());
+                    total = total + Integer.parseInt(data.child("price").getValue().toString()) * Integer.parseInt(data.child("q").getValue().toString());
                 }
+                    }
                 tot = (TextView)view.findViewById(R.id.total);
                 tot.setText(Integer.toString(total));
                 if (itemdata.isEmpty()) {

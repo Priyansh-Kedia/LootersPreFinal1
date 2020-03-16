@@ -67,7 +67,7 @@ public class MenuFrag extends Fragment {
         int a = account.getEmail().toString().indexOf("@");
         String b = account.getEmail().toString().substring(0,a);
         relativeLayout = (RelativeLayout)view.findViewById(R.id.parent);
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("menu").child("items");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
         databaseReference1 = FirebaseDatabase.getInstance().getReference().child("items").child(b);
         databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -105,7 +105,7 @@ public class MenuFrag extends Fragment {
 
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-                        MyData myData = new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(), snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), "0");
+                        MyData myData = new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(), snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), snapshot.child("q").getValue().toString());
                         itemdata.add(myData);
                         //Toast.makeText(getContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
 

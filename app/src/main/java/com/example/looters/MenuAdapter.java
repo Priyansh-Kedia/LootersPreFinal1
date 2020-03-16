@@ -115,7 +115,7 @@ static int i;
                int c = account.getEmail().toString().indexOf("@");
                b = account.getEmail().toString().substring(0,c);
            }
-            DatabaseReference cartref = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+            DatabaseReference cartref = FirebaseDatabase.getInstance().getReference().child(b);
             DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("items").child(b);
 
 
@@ -126,18 +126,18 @@ static int i;
                     i++;
                     quantity.setText(Integer.toString(i));
 
-                    if (i==1)
-                    {
-                        key = cartref.push().getKey();
-                        order.setAccount(account.getEmail().toString().substring(0,9));
-                        order.setName(itemname.getText().toString());
-                        order.setPrice(itemprice.getText().toString().substring(2));
-                        order.setQ(quantity.getText().toString());
-                        order.setSection(section.getText().toString());
-                       // order.setOtp(id);
-                        cartref.child(key).setValue(order);
-                    }
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+//                    if (i==1)
+//                    {
+//                        key = cartref.push().getKey();
+//                        order.setAccount(account.getEmail().toString().substring(0,9));
+//                        order.setName(itemname.getText().toString());
+//                        order.setPrice(itemprice.getText().toString().substring(2));
+//                        order.setQ(quantity.getText().toString());
+//                        order.setSection(section.getText().toString());
+//                       // order.setOtp(id);
+//                        cartref.child(key).setValue(order);
+//                    }
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -156,7 +156,7 @@ static int i;
                                    // order.setPending(true);
                                     Map<String,Object> map = new HashMap<>();
                                     map.put("q",quantity.getText().toString());
-                                    cartref.child(key).updateChildren(map);
+                                    cartref.child(key1).updateChildren(map);
 
                                 }
                             }
@@ -182,7 +182,7 @@ static int i;
                     }
                     quantity.setText(Integer.toString(i));
 
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
                     databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -200,13 +200,9 @@ static int i;
                                         order.setQ(quantity.getText().toString());
                                         Map<String,Object> map = new HashMap<>();
                                         map.put("q",quantity.getText().toString());
-                                        if (Integer.parseInt(quantity.getText().toString()) != 0) {
                                             cartref.child(key).updateChildren(map);
-                                        }
-                                        if (Integer.parseInt(quantity.getText().toString()) == 0)
-                                        {
-                                            cartref.child(key).removeValue();
-                                        }
+
+
                                     }
 //                                else {
 //                                    if (Integer.parseInt(quantity.getText().toString()) == 0)
