@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="#292C32"
     android:layout_width="match_parent"
@@ -48,17 +49,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/itemtextcart"
                 app:layout_constraintLeft_toLeftOf="@+id/itemtextcart"
                 />
+
             <Button
                 android:id="@+id/subBcart"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/minusbtnm"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias=".99"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/addBcart"
+                android:layout_marginRight="30dp"
                 app:layout_constraintVertical_bias=".95"
+                tools:layout_editor_absoluteX="314dp"
+
+
                 />
 
             <Button
@@ -69,9 +73,11 @@
                 android:background="@drawable/plusbtnm"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/subBcart"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".99"
                 app:layout_constraintVertical_bias=".95"
-                android:layout_marginRight="30dp"
+
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -81,8 +87,8 @@
                 android:textColor="#FF8330"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/addBcart"
-                app:layout_constraintRight_toLeftOf="@id/subBcart"
+                app:layout_constraintLeft_toRightOf="@id/subBcart"
+                app:layout_constraintRight_toLeftOf="@id/addBcart"
                 app:layout_constraintVertical_bias=".95"
                 android:text="00"/>
 

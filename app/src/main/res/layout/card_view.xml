@@ -74,12 +74,13 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/minusbtnm"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias=".99"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/addB"
+                android:layout_marginRight="30dp"
                 app:layout_constraintVertical_bias=".95"
+                app:layout_editor_absoluteX="314dp"
+
                 />
 
             <Button
@@ -90,22 +91,24 @@
                 android:background="@drawable/plusbtnm"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".99"
                 app:layout_constraintVertical_bias=".95"
-                app:layout_constraintRight_toLeftOf="@id/subB"
-                android:layout_marginRight="30dp"
-                />
 
+                />
             <TextView
-                android:id="@+id/quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:id="@+id/quantity"
                 android:textColor="#FF8330"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/subB"
+                app:layout_constraintRight_toLeftOf="@id/addB"
                 app:layout_constraintVertical_bias=".95"
-                app:layout_constraintRight_toLeftOf="@+id/subB"
-                app:layout_constraintLeft_toRightOf="@id/addB"
-                android:text="0" />
+                android:text="00"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
