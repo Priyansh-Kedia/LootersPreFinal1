@@ -58,7 +58,6 @@ public class MenuFrag extends Fragment {
 
         loader = new CustLoad(getActivity());
 //        loader.hideloader();
-        Toast.makeText(getContext(),"This is menufrag",Toast.LENGTH_LONG).show();
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
 
        Network network = new Network(getContext());
