@@ -42,14 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        if (account!=null)
-        {
-//            fragmentTransaction = fragmentManager1.beginTransaction();
-//            fragmentTransaction.add(R.id.menuadd,menuFrag);
-//            fragmentTransaction.commit();
-            startActivity(new Intent(LoginActivity.this,MenuActivity.class));
-        }
+
 
         custLoad = new CustLoad(LoginActivity.this);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
