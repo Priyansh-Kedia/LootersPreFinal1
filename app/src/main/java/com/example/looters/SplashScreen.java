@@ -5,9 +5,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.transition.Explode;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.TextView;
@@ -64,7 +67,10 @@ public class SplashScreen extends AppCompatActivity {
 
                         }
                     });
-                    startActivity(new Intent(SplashScreen.this,MenuActivity.class));
+                    Intent intent = new Intent(SplashScreen.this,MenuActivity.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+
 
                 }
                 else {
