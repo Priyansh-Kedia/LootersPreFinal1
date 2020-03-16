@@ -49,6 +49,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="30dp"
+        android:textColor="#fff"
         android:id="@+id/no_pending_orders"/>
 
 
