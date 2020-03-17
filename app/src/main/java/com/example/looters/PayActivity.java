@@ -114,7 +114,7 @@ public class PayActivity extends AppCompatActivity {
                         {
                             if (!(dataSnapshot1.child("q").equals("0"))) {
                                 Log.d("ADD!", dataSnapshot1.getValue().toString());
-                                DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Looters").child("Gaurav").child(otp).child(otp);
+                                DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Looters").child("Gaurav").child(otp).child(b);
                                 databaseReference1.setValue(dataSnapshot.getValue());
                                 databaseReference1.push();
                                 databaseReference.removeValue();

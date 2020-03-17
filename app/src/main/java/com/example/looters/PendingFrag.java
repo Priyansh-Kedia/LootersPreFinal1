@@ -62,11 +62,14 @@ public PendingFrag(){}
                     custLoad.showloader();
                     for (DataSnapshot data : dataSnapshot.getChildren()) {
                         for (DataSnapshot dataSnapshot1 : data.getChildren())
-                            for (DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren())
-                            if (dataSnapshot2.child("account").getValue().equals(b))
+                            if (dataSnapshot1.getKey().toString().equals(b))
                             {
-                        PendingData pendingData = new PendingData(dataSnapshot2.child("name").getValue().toString(),dataSnapshot2.child("q").getValue().toString());
-                        itemdata.add(pendingData);
+                                for (DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren()) {
+                                    if (!(dataSnapshot2.child("q").getValue().toString().equals("0"))) {
+                                        PendingData pendingData = new PendingData(dataSnapshot2.child("name").getValue().toString(), dataSnapshot2.child("q").getValue().toString());
+                                        itemdata.add(pendingData);
+                                    }
+                                }
                     }}
                     if (itemdata.isEmpty())
                     {
