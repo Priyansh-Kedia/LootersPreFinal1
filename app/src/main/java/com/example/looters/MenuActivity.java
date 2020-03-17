@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Random;
 
@@ -77,6 +79,18 @@ public class MenuActivity extends FragmentActivity {
 
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+
+        int c = account.getEmail().toString().indexOf("@");
+        String b = account.getEmail().toString().substring(0,c);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
+        databaseReference.removeValue();
+    }
+
 
     @Override
     public void onBackPressed() {

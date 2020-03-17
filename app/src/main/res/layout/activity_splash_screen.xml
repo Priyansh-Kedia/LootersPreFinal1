@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/splashscreen"
     tools:context=".SplashScreen"
+    android:alpha="0"
     android:background="@drawable/splashscreentest">
 
 
