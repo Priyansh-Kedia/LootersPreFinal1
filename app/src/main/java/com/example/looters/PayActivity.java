@@ -103,7 +103,7 @@ public class PayActivity extends AppCompatActivity {
 //                Random random = new Random();
 //                String id = String.format("%04d", random.nextInt(10000));
                 String b = account.getEmail().toString().substring(0,a);
-                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
 
                 // databaseReference.child("OTP").setValue(OTP);
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -112,11 +112,13 @@ public class PayActivity extends AppCompatActivity {
 
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
                         {
-                            Log.d("ADD!",dataSnapshot1.getValue().toString());
-                            DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Looters").child("Gaurav").child(otp).child(otp);
-                            databaseReference1.setValue(dataSnapshot.getValue());
-                            databaseReference1.push();
-                            databaseReference.removeValue();
+                            if (!(dataSnapshot1.child("q").equals("0"))) {
+                                Log.d("ADD!", dataSnapshot1.getValue().toString());
+                                DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("Looters").child("Gaurav").child(otp).child(otp);
+                                databaseReference1.setValue(dataSnapshot.getValue());
+                                databaseReference1.push();
+                                databaseReference.removeValue();
+                            }
                         }
                //        String key = databaseReference1.getKey();
 //                        if (databaseReference1.child(b) != null)
