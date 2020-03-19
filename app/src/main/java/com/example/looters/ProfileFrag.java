@@ -49,7 +49,7 @@ GoogleSignInClient mGoogleSignInClient;
 //                Random random = new Random();
 //                String id = String.format("%04d", random.nextInt(10000));
         String b = account.getEmail().toString().substring(0,a);
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("items").child(b);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child(b);
         profilenameimg = (TextView)view.findViewById(R.id.profileimgname);
         profilenameimg.setText(account.getDisplayName().toString().substring(0,1));
         profilename.setText(account.getDisplayName().toString());
