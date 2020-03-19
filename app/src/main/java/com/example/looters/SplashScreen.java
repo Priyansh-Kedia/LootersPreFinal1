@@ -24,6 +24,8 @@ public class SplashScreen extends AppCompatActivity {
     TextView textView;
     CardView cardView;
     Boolean doit=false;
+    int c;
+    String b;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +39,10 @@ public class SplashScreen extends AppCompatActivity {
         constraintLayout.animate().alpha(1f).setDuration(3000);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        int c = account.getEmail().toString().indexOf("@");
-        String b = account.getEmail().toString().substring(0,c);
+        if (account!=null) {
+             c = account.getEmail().toString().indexOf("@");
+             b = account.getEmail().toString().substring(0, c);
+        }
         if (account!=null && databaseReference.child(b).getKey().toString().equals(b))
         {
             doit = true;
