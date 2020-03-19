@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -19,6 +20,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private static final int GOOGLE_SIGNIN_CODE = 1000;
@@ -126,6 +132,25 @@ public class LoginActivity extends AppCompatActivity {
 //               fragmentTransaction = fragmentManager1.beginTransaction();
 //               fragmentTransaction.add(R.id.menuadd,menuFrag);
 //               fragmentTransaction.commit();
+               DatabaseReference databaseReference1 = FirebaseDatabase.getInstance().getReference().child("menu").child("items");
+               DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+              int  c = account.getEmail().toString().indexOf("@");
+              String b = account.getEmail().toString().substring(0, c);
+               databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                       int i = 0;
+                       for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                           databaseReference.child(b).child(String.valueOf(i)).setValue(dataSnapshot1.getValue());
+                           i++;
+                       }
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                   }
+               });
                startActivity(new Intent(LoginActivity.this,MenuActivity.class));
                SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, 0);
                SharedPreferences.Editor editor = sharedPreferences.edit();
