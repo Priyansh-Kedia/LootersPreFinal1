@@ -104,7 +104,8 @@ public class MenuFrag extends Fragment {
 
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
-                        MyData myData = new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(), snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), snapshot.child("q").getValue().toString());
+                        MyData myData = new MyData(snapshot.child("name").getValue().toString(), "₹ " + snapshot.child("price").getValue().toString(),
+                                snapshot.child("enabled").getValue().toString(), snapshot.child("section").getValue().toString(), snapshot.child("q").getValue().toString());
                         itemdata.add(myData);
                         //Toast.makeText(getContext(), Integer.toString(i), Toast.LENGTH_SHORT).show();
 
